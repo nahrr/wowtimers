@@ -15,16 +15,36 @@
   align-items: center;
 }
 .timers {
-  z-index: 100;
-  border-radius: 0.5rem;
-}
-.heading {
-  font-size: 6rem;
-  color: var(--red);
-  margin: 0;
-  animation: blink 1s infinite;
+  width: max(50%, 900px);
+  z-index: 9999;
+  margin: 0 20px;
+  /* animation: blink 1s infinite; */
   text-shadow: 0 0 20px rgb(62, 51, 44), 0 0 20px rgb(62, 51, 44);
 }
+.firstRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  place-items: center;
+  color: var(--color-2);
+}
+.secondRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  place-items: center;
+  font-size: 6rem;
+  font-weight: bold;
+  color: var(--red);
+}
+.divider {
+  font-weight: 100;
+  font-size: 2rem;
+  color: var(--color-3);
+}
+.header {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
 @media screen and (max-width: 768px) {
   .heading {
     font-size: 4rem;
