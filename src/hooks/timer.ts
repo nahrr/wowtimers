@@ -4,7 +4,7 @@ type TimerProps = {
   hours: number;
   minutes: number;
   seconds: number;
-  isTimerFinished:  boolean;
+  isTimerFinished: boolean;
 };
 const useTimer = (targetDate: string | number | Date) => {
   const countDownDate = new Date(targetDate).getTime();
@@ -33,7 +33,7 @@ const getReturnValues = (countDown: number): TimerProps => {
   );
   const seconds: number = Math.floor((countDown % (1000 * 60)) / 1000);
 
-  const foo  = (): boolean => {
+  const foo = (): boolean => {
     if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) return true;
     return false;
   };

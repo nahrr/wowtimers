@@ -1,0 +1,41 @@
+.card {
+  box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  width: 400px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: var(--super-light-blue);
+  margin: 0;
+}
+.zaTitle {
+  -webkit-text-stroke-color: var(--orange);
+}
+.link {
+  text-decoration: none;
+}
+.wotlk {
+  background-image: url(../assets/wotlk.webp);
+}
+.za {
+  background-image: url(../assets/za.webp);
+}

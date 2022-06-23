@@ -1,21 +1,19 @@
 .container {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-}
-.za {
   height: 100vh;
-  width: 100%;
-  background-image: url(../assets/za.webp);
-  background-repeat: no-repeat;
+  width: 100vw;
+  background: no-repeat center fixed;
   background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.zaBg {
+  background-image: url(../assets/za.webp);
+}
+.wotlkBg {
+  background-image: url(../assets/wotlk.webp);
+}
 .timers {
-  width: max(50%, 900px);
   z-index: 9999;
   margin: 0 20px;
   /* animation: blink 1s infinite; */
@@ -23,15 +21,15 @@
 }
 .firstRow {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   place-items: center;
   color: var(--color-2);
 }
 .secondRow {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   place-items: center;
-  font-size: 6rem;
+  font-size: calc(45px + 0.390625vw);
   font-weight: bold;
   color: var(--red);
 }
@@ -43,12 +41,10 @@
 .header {
   font-size: 2rem;
   font-weight: lighter;
-}
-
-@media screen and (max-width: 768px) {
-  .heading {
-    font-size: 4rem;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
 }
 
 @keyframes blink {

@@ -3,14 +3,15 @@
 :root {
   --black: #141e27;
   --red: #f15d58;
-  --color-1: #3d8dae;
-  --color-2: #df8453;
-  --color-3: #e4a9a8;
+  --super-light-blue: #b2d5f9;
+  --orange: #ef9d71;
+  --light-red: #e4a9a8;
+  --bg-dark: #202125;
 }
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--black);
+  background-color: var(--bg-dark);
   font-family: Koulen, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

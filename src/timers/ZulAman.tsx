@@ -1,44 +1,31 @@
 import { useEffect, useState } from "react";
+import { fetchZulAmanTimer } from "../hooks/Api";
 import { useTimer } from "../hooks/timer";
-import style from "./Timers.module.css";
+import { TimerProps } from "../types/timer";
+import Timers from "./Timers";
+
 const ZulAman = () => {
-  const [dateTime, setDateTime] = useState<Date>(
-    new Date("2022-06-17T08:00:00")
-  );
-  const { days, hours, minutes, seconds, isTimerFinished } = useTimer(dateTime);
+  const [zulamanTimer, setZulamanTimer] = useState<Date>(new Date());
+
+  const { days, hours, minutes, seconds } = useTimer(zulamanTimer);
 
   useEffect(() => {
-    if (isTimerFinished) {
-      setDateTime((d) => new Date(d.setDate(d.getDate() + 3)));
-    }
-  }, [isTimerFinished]);
-
-  const zeroPad = (num: number) => String(num).padStart(2, "0");
+    const fetchZulAmanTimerTest = async () => {
+      const data = await fetchZulAmanTimer();
+      console.log(data);
+      setZulamanTimer(data.date);
+    };
+    fetchZulAmanTimerTest();
+  }, []);
 
   return (
-    <div className={style.za}>
-      <div className={style.timers}>
-        <div className={style.firstRow}>
-          <span className={style.header}>Days</span>
-          <span></span>
-          <span className={style.header}>Hours</span>
-          <span></span>
-          <span className={style.header}>Minutes</span>
-          <span></span>
-          <span className={style.header}>Seconds</span>
-        </div>
-
-        <div className={style.secondRow}>
-          <span>{days}</span>
-          <span className={style.divider}>:</span>
-          <span>{hours}</span>
-          <span className={style.divider}>:</span>
-          <span>{minutes}</span>
-          <span className={style.divider}>:</span>
-          <span>{zeroPad(seconds)}</span>
-        </div>
-      </div>
-    </div>
+    <Timers
+      days={days}
+      hours={hours}
+      minutes={minutes}
+      seconds={seconds}
+      background={"zaBg"}
+    />
   );
 };
 
