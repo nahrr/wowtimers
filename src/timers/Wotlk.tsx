@@ -1,8 +1,15 @@
+import ApiStatus from "../ApiStatus";
+import { useFetchWotlkTimer } from "../hooks/ApiHook";
 import Timers from "./Timers";
 
 const Wotlk = () => {
+  const { data, status, isSuccess } = useFetchWotlkTimer();
+
+  if (!isSuccess) return <ApiStatus status={status} />;
   return (
-    <Timers days={0} hours={0} minutes={0} seconds={0} background={"wotlkBg"} />
+    <>
+      <Timers date={data.date} background={"wotlkBg"} />
+    </>
   );
 };
 

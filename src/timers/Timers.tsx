@@ -1,13 +1,12 @@
 import style from "./Timers.module.css";
+import { useTimer } from "../hooks/TimerHook";
 
 type TimerProps = {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
+  date: Date;
   background: string;
 };
-const Timers = ({ days, hours, minutes, seconds, background }: TimerProps) => {
+const Timers = ({ date, background }: TimerProps) => {
+  const { days, hours, minutes, seconds } = useTimer(date);
   const zeroPad = (num: number) => String(num).padStart(2, "0");
 
   return (

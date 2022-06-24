@@ -23,7 +23,6 @@ const useTimer = (targetDate: string | number | Date) => {
 };
 
 const getReturnValues = (countDown: number): TimerProps => {
-  // calculate time left
   const days: number = Math.floor(countDown / (1000 * 60 * 60 * 24));
   const hours: number = Math.floor(
     (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)

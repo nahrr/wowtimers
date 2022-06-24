@@ -16,14 +16,12 @@
 .timers {
   z-index: 9999;
   margin: 0 20px;
-  /* animation: blink 1s infinite; */
   text-shadow: 0 0 20px rgb(62, 51, 44), 0 0 20px rgb(62, 51, 44);
 }
 .firstRow {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   place-items: center;
-  color: var(--color-2);
 }
 .secondRow {
   display: grid;

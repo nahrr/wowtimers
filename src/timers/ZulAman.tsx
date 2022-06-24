@@ -1,32 +1,13 @@
-import { useEffect, useState } from "react";
-import { fetchZulAmanTimer } from "../hooks/Api";
-import { useTimer } from "../hooks/timer";
-import { TimerProps } from "../types/timer";
+import ApiStatus from "../ApiStatus";
+import { useFetchZulAmanTimer } from "../hooks/ApiHook";
 import Timers from "./Timers";
 
 const ZulAman = () => {
-  const [zulamanTimer, setZulamanTimer] = useState<Date>(new Date());
+  const { data, status, isSuccess } = useFetchZulAmanTimer();
 
-  const { days, hours, minutes, seconds } = useTimer(zulamanTimer);
+  if (!isSuccess) return <ApiStatus status={status} />;
 
-  useEffect(() => {
-    const fetchZulAmanTimerTest = async () => {
-      const data = await fetchZulAmanTimer();
-      console.log(data);
-      setZulamanTimer(data.date);
-    };
-    fetchZulAmanTimerTest();
-  }, []);
-
-  return (
-    <Timers
-      days={days}
-      hours={hours}
-      minutes={minutes}
-      seconds={seconds}
-      background={"zaBg"}
-    />
-  );
+  return <>{data && <Timers date={data.date} background={"zaBg"} />}</>;
 };
 
 export default ZulAman;
