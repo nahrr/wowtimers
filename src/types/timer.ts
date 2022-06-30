@@ -1,3 +1,3 @@
 export type TimerProps = {
-  date: Date;
+  resetDate: Date;
 };
