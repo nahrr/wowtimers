@@ -8,7 +8,7 @@ const Wotlk = () => {
   if (!isSuccess) return <ApiStatus status={status} />;
   return (
     <>
-      <Timers date={data.resetDate} background={"wotlkBg"} />
+      <Timers date={data.resetDate} css={"wotlkBg"} />
     </>
   );
 };

@@ -7,7 +7,7 @@ const ZulAman = () => {
 
   if (!isSuccess) return <ApiStatus status={status} />;
 
-  return <>{data && <Timers date={data.resetDate} background={"zaBg"} />}</>;
+  return <>{data && <Timers date={data.resetDate} css={"za"} />}</>;
 };
 
 export default ZulAman;

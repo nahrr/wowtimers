@@ -1,14 +1,17 @@
+import ErrorHandler from "./error/ErrorHandler";
+import Loading from "./loader/Loading";
+
 type Args = {
   status: "idle" | "loading" | "error";
 };
 const ApiStatus = ({ status }: Args) => {
   switch (status) {
     case "error":
-      return <div>Error</div>;
+      return <ErrorHandler />;
     case "idle":
       return <div>Idle</div>;
     case "loading":
-      return <div>Loading</div>;
+      return <Loading />;
     default:
       throw Error("Unknown status");
   }

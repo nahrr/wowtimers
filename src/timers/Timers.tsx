@@ -3,34 +3,32 @@ import { useTimer } from "../hooks/TimerHook";
 
 type TimerProps = {
   date: Date;
-  background: string;
+  css: string;
 };
-const Timers = ({ date, background }: TimerProps) => {
+const Timers = ({ date, css }: TimerProps) => {
   const { days, hours, minutes, seconds } = useTimer(date);
   const zeroPad = (num: number) => String(num).padStart(2, "0");
+  const background = `${css}Bg`;
+  const firstRow = `${css}FirstRow`;
 
   return (
     <div className={`${style.container} ${style[background]}`}>
       <div className={style.timers}>
-        <div className={style.firstRow}>
-          <span className={style.header}>Days</span>
-          <span></span>
-          <span className={style.header}>Hours</span>
-          <span></span>
-          <span className={style.header}>Minutes</span>
-          <span></span>
-          <span className={style.header}>Seconds</span>
-        </div>
+        <span className={style.time}>{days}</span>
+        <span className={style.time}>{hours}</span>
+        <span className={style.time}>{minutes}</span>
+        <span className={style.time}>{zeroPad(seconds)}</span>
 
-        <div className={style.secondRow}>
-          <span>{days}</span>
-          <span className={style.divider}>:</span>
-          <span>{hours}</span>
-          <span className={style.divider}>:</span>
-          <span>{minutes}</span>
-          <span className={style.divider}>:</span>
-          <span>{zeroPad(seconds)}</span>
-        </div>
+        <span className={`${style.header} ${style.daysHeader}`}>Days</span>
+        <span className={`${style.header} ${style.hoursHeader}`}>Hours</span>
+        <span className={`${style.header} ${style.minutesHeader}`}>
+          Minutes
+        </span>
+        <span className={`${style.header} ${style.secondsHeader}`}>
+          Seconds
+        </span>
+
+        <div className={style.secondRow}></div>
       </div>
     </div>
   );
