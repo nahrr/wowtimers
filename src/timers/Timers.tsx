@@ -9,7 +9,6 @@ const Timers = ({ date, css }: TimerProps) => {
   const { days, hours, minutes, seconds } = useTimer(date);
   const zeroPad = (num: number) => String(num).padStart(2, "0");
   const background = `${css}Bg`;
-  const firstRow = `${css}FirstRow`;
 
   return (
     <div className={`${style.container} ${style[background]}`}>
@@ -18,7 +17,6 @@ const Timers = ({ date, css }: TimerProps) => {
         <span className={style.time}>{hours}</span>
         <span className={style.time}>{minutes}</span>
         <span className={style.time}>{zeroPad(seconds)}</span>
-
         <span className={`${style.header} ${style.daysHeader}`}>Days</span>
         <span className={`${style.header} ${style.hoursHeader}`}>Hours</span>
         <span className={`${style.header} ${style.minutesHeader}`}>
@@ -27,8 +25,6 @@ const Timers = ({ date, css }: TimerProps) => {
         <span className={`${style.header} ${style.secondsHeader}`}>
           Seconds
         </span>
-
-        <div className={style.secondRow}></div>
       </div>
     </div>
   );
