@@ -1,3 +1,4 @@
+import Footer from "../footer/Footer";
 import style from "./Menu.module.css";
 import MenuCard from "./MenuCard";
 
@@ -12,6 +13,7 @@ const Menu = () => {
           title="Wrath of the lich king"
         />
       </nav>
+      <Footer />
     </>
   );
 };
