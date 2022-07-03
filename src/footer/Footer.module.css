@@ -1,0 +1,26 @@
+.footer {
+  /* position: absolute;
+  bottom: 0; */
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  color: #7289da;
+  font-size: 4rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.username {
+  color: #7289da;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.copied {
+  color: var(--green);
+  font-size: 1.5rem;
+  padding: 1rem;
+}
