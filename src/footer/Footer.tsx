@@ -1,6 +1,5 @@
 import style from ".//Footer.module.css";
 import { FaDiscord } from "react-icons/fa";
-import { useState } from "react";
 import { useCopyToClipboard } from "../hooks/CopyToClipboard";
 
 const Footer = () => {
