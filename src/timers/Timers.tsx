@@ -15,19 +15,15 @@ const Timers = ({ date, css }: TimerProps) => {
       <div className={style.timers}>
         <div>
           <span className={style.time}>{days}</span>
-          <ProgressBar timeLeft={days} max={60} />
         </div>
         <div>
           <span className={style.time}>{hours}</span>
-          <ProgressBar timeLeft={hours} max={60} />
         </div>
         <div>
           <span className={style.time}>{minutes}</span>
-          <ProgressBar timeLeft={minutes} max={60} />
         </div>
         <div className={style.test}>
           <span className={style.time}>{zeroPad(seconds)}</span>
-          <ProgressBar timeLeft={seconds} max={60} />
         </div>
         <span className={`${style.header} ${style.daysHeader}`}>Days</span>
         <span className={`${style.header} ${style.hoursHeader}`}>Hours</span>
@@ -38,6 +34,13 @@ const Timers = ({ date, css }: TimerProps) => {
           Seconds
         </span>
       </div>
+      <ProgressBar
+        seconds={seconds}
+        minutes={minutes}
+        hours={hours}
+        days={days}
+        maxTimeInDays={3}
+      />
     </div>
   );
 };

@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .zaBg {
@@ -15,6 +16,7 @@
   background-image: url(../assets/wotlk.webp);
 }
 .timers {
+  width: min(800px, 90%);
   z-index: 9999;
   margin: 0 20px;
   -webkit-background-clip: text;

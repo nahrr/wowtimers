@@ -1,12 +1,29 @@
 .wrapper {
-  width: 100px;
-  height: 10px;
+  width: min(600px, 80%);
+  height: 25px;
   display: flex;
+  border-radius: 0.2rem;
+  position: relative;
+  outline: 2px solid var(--green);
 }
 .progressBar {
   width: 100%;
-  height: 10px;
-  background-color: rgb(237, 113, 142);
-  border-radius: 1rem;
-  transition: width 1s ease-in-out;
+  height: 25px;
+  background-color: var(--orange);
+  opacity: 0.5;
+  transition: width 2s;
+  animation: loading ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.percentLeft {
+  position: absolute;
+  left: 50%;
+  z-index: 999;
+  color: white;
+}
+@keyframes loading {
+  0% {
+    width: 0;
+  }
 }
