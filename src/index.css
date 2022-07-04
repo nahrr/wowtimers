@@ -8,6 +8,7 @@
   --light-red: #e4a9a8;
   --bg-dark: #202125;
   --green: #1fb180;
+  --duration: 30;
 }
 body {
   margin: 0;

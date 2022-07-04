@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .zaBg {
   background-image: url(../assets/za.webp);
 }
@@ -32,6 +33,7 @@
   font-size: 6rem;
   font-weight: 900;
   color: var(--green);
+  margin: 0;
 }
 .zaFirstRow {
   color: var(--green);
@@ -58,5 +60,11 @@
   }
   .secondsHeader {
     grid-row: 4;
+  }
+}
+@keyframes roundtime {
+  to {
+    /* More performant than animating `width` */
+    transform: scaleX(0);
   }
 }
