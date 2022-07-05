@@ -11,7 +11,9 @@ const Footer = () => {
           {copied && copied} <span className={style.copied}>copied!</span>
         </span>
       ) : (
-        <FaDiscord className={style.logo} onClick={onCopy} />
+        <button className={style.logoWrapper}>
+        <FaDiscord className={style.logo} onClick={onCopy}/>
+        </button>
       )}
     </footer>
   );

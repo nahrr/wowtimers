@@ -11,6 +11,7 @@ const Menu = () => {
           path="/Wotlk"
           styleName="wotlk"
           title="Wrath of the lich king"
+          disabled={true}
         />
       </nav>
       <Footer />

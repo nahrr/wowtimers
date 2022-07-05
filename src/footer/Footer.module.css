@@ -1,18 +1,42 @@
 .footer {
-  /* position: absolute;
-  bottom: 0; */
   margin-top: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
-
+.logoWrapper {
+  background: none;
+  border: 0;
+  width: fit-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin-bottom: 1rem;
+}
 .logo {
   color: #7289da;
-  font-size: 4rem;
-  padding: 1rem;
+  font-size: 2.25rem;
   cursor: pointer;
+  margin-top: auto;
+  z-index: 9999;
+  box-shadow: rgb(0 0 0 / 30%) 0px 0px 20px;
+}
+.logoWrapper:hover::before {
+  font-family: var(--font-default);
+  content: "Discord contact info";
+  font-size: 1rem;
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  margin-bottom: 5px;
+  padding: 5px;
+  color: var(--super-light-blue);
+  text-align: center;
 }
 .username {
   color: #7289da;
