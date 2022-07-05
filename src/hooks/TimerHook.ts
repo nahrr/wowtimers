@@ -23,21 +23,23 @@ const useTimer = (targetDate: string | number | Date) => {
 };
 
 const getReturnValues = (countDown: number): TimerProps => {
-  const days: number = Math.floor(countDown / (1000 * 60 * 60 * 24));
-  const hours: number = Math.floor(
+  let days: number = Math.floor(countDown / (1000 * 60 * 60 * 24));
+  let hours: number = Math.floor(
     (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
-  const minutes: number = Math.floor(
+  let minutes: number = Math.floor(
     (countDown % (1000 * 60 * 60)) / (1000 * 60)
   );
-  const seconds: number = Math.floor((countDown % (1000 * 60)) / 1000);
+  let seconds: number = Math.floor((countDown % (1000 * 60)) / 1000);
+  let isTimerFinished = false;
 
-  const foo = (): boolean => {
-    if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) return true;
-    return false;
-  };
-
-  const isTimerFinished = foo();
+  if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
+    days = 0;
+    hours = 0;
+    minutes = 0;
+    seconds = 0;
+    isTimerFinished = true;
+  }
 
   const timer: TimerProps = {
     days,

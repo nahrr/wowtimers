@@ -1,15 +1,22 @@
 import style from "./Timers.module.css";
 import { useTimer } from "../hooks/TimerHook";
 import ProgressBar from "../progressBar/ProgressBar";
+import { useQueryClient } from "react-query";
 
 type TimerProps = {
   date: Date;
   css: string;
 };
 const Timers = ({ date, css }: TimerProps) => {
-  const { days, hours, minutes, seconds } = useTimer(date);
+  const { days, hours, minutes, seconds, isTimerFinished } = useTimer(date);
   const zeroPad = (num: number) => String(num).padStart(2, "0");
   const background = `${css}Bg`;
+  const queryClient = useQueryClient();
+
+  if (isTimerFinished) {
+    queryClient.invalidateQueries();
+  }
+
   return (
     <div className={`${style.container} ${style[background]}`}>
       <div className={style.timers}>
